@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>개요 실습 문제</title>
+  <style>
+    .div-test {
+      border: 1px solid;
+      width: 100px;
+      height: 100px;
+      background-color: black;
+    }
+
+    #area {
+      border: 1px solid;
+      width: 300px;
+      height: 200px;
+      margin-top: 5px;
+    }
+
+    td {
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+<body>
+  <h1>개요 실습 문제</h1>
+
+  <hr>
+
+  <h2>문제 1. 색상 조절하기</h2>
+
+  <p>
+    색상 선택 후 변경 버튼을 클릭하면 색상이 변경되도록 만들기
+  </p>
+  <div class="div-test", id="test1"></div>
+  <input type="color" id="pickColor">
+  <button onclick="changeColor();">변경</button>
+
+  <script>
+    function changeColor() {
+      var color = document.getElementById('pickColor').value;
+      test1.style.backgroundColor = color;
+    }
+  </script>
+  
+  <hr>
+  
+  <h2>문제 2. 크기 변경하기</h2>
+  <p>
+    버튼에 따라 크기 조절이 가능하도록 만들기
+  </p>
+  <div class="div-test" id="test2"></div>
+  <button onclick="changeSize1();">50X50</button>
+  <button onclick="changeSize2();">원본(100X100)</button>
+  <button onclick="changeSize3();">200X200</button>
+
+  <script>
+    function changeSize1() {
+      var size = document.getElementById('test2');
+
+      size.style.width = '50px';
+      size.style.height = '50px';
+    }
+
+    function changeSize2() {
+      var size = document.getElementById('test2');
+
+      size.style.width = '100px';
+      size.style.height = '100px';
+    }
+
+    function changeSize3() {
+      var size = document.getElementById('test2');
+
+      size.style.width = '200px';
+      size.style.height = '200px';
+    }  
+  </script>
+
+  <hr>
+
+  <h2>문제 3. HTML 태그에 접근</h2>
+  <p>
+    텍스트 박스로 입력받은 데이터를 가져와서 출력하기
+  </p>
+
+  <label>구매자 : <input type="text" id="buyer" placeholder="구매자의 이름을 입력하세요."></label>
+  <br><br>
+  <label>상품명 : <input type="text" id="productName" placeholder="구매 상품명을 입력하세요."></label>
+  <br><br>
+  <label>가격 : <input type="text" id="price" placeholder="구매 가격을 입력하세요."></label>
+  <br><br>
+
+  <button onclick="readValue();">입력값 출력하기</button>
+
+  <div id="area"></div>
+
+  <script>
+    function readValue() {
+      var input1 = document.getElementById('buyer');
+      var buyer = input1.value;
+      var input2 = document.getElementById('productName');
+      var productName = input2.value;
+      var input3 = document.getElementById('price');
+      var price = input3.value;
+
+      document.getElementById('area').innerHTML += '구매자 : ' + buyer + '<br>';
+      document.getElementById('area').innerHTML += '상품명 : ' + productName + '<br>';
+      document.getElementById('area').innerHTML += '가격 : ' + price + '<br>';
+      // input.value = '';
+      // input.focus();
+    }
+  </script>
+
+  <h2>문제 4. 테이블 만들기</h2>
+  <p>
+    prompt()로 사용자로부터 행과 열의 개수를 입력받아 테이블 만들기 <br>
+    아래의 div 태그에 innerHTML 속성을 사용해서 만들어진 테이블 포함한다.
+  </p>
+
+  <button onclick="createTable();" style="margin-bottom: 30px;">테이블 생성</button>
+
+  <div id="test4"></div>
+
+  <script>
+    function createTable() {
+      var table = "<table border='1'>";
+      var row = Number(prompt("원하는 행을 입력하세요."));
+      var col = Number(prompt("원하는 열을 입력하세요."));
+      for (i = 1; i <= row; i++) {
+        table += "<tr>";
+        for (j = 1; j <= col; j++) {
+          table += "<td>"+"</td>";
+        }
+        table += "</tr>";
+      }
+      table += "</table>";
+      // test4.innerHTML = table;
+      document.getElementById('test4').innerHTML = table;
+    }
+  </script>
+
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+
+
+</body>
+</html>

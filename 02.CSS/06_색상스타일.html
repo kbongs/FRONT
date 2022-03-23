@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>색상 스타일</title>
+  <style>
+    body {
+      /* background-color: lime; */
+      /* background-color: #669900; */
+      /* background-color: rgb(255, 80, 40); */
+      /* background-color: rgba(255, 80, 40, .5); */
+      /* background-color: hsl(50, 50%, 50%); */
+      background-color: hsla(50, 50%, 50%, 1);
+    }
+
+    #div-bg {
+      width: 50%;
+      background-color: white;
+    }
+
+    .div-clip {
+      width: 40%;
+      margin: 30px;
+      padding: 30px;
+      background-color: white;
+      border: 15px dashed rgba(0, 0, 0, 0.2);
+    }
+
+    #div-clip1 {
+      background-clip: border-box;
+    }
+
+    #div-clip2 {
+      background-clip: padding-box;
+    }
+
+    #div-clip3 {
+      background-clip: content-box;
+    }
+
+    #div-bg-img {
+      border: 15px dashed rgba(0, 0, 0, 0.2);
+      width: 70%;
+      height: 800px;
+      padding: 50px;
+      background-image: url(../resources/image/bgsample.PNG);
+
+      /* 이미지 반복 설정 */
+      /* background-repeat: repeat-x; */
+      /* background-repeat: repeat-y; */
+      background-repeat: no-repeat;
+
+      /* 이미지 크기 설정 */
+      /* background-size: contain; */
+      /* background-size: cover; */
+      background-size: 300px 200px;
+      /* background-size: 100% 70%; */
+
+      /* 이미지의 위치 설정 */
+      /* background-position: left top; */
+      /* background-position: right top; */
+      /* background-position: center; */
+      /* background-position: 50% 100px; */
+
+      /* 이미지의 배치 기준 설정 */
+      /* background-origin: padding-box; */
+      /* background-origin: border-box; */
+      /* background-origin: content-box; */
+
+      /* 이미지를 고정하도록 설정 */
+      background-attachment: fixed;
+    }
+  </style>
+</head>
+<body>
+  <h1>색상 스타일</h1>
+
+  <hr>
+
+  <h2>background-color</h2>
+  <div id="div-bg">
+    지난 25일 전국적 네트워크 장애 사태를 일으킨 KT가 내부 소통지연과 실수로 제때 원인을 파악하지 못하고 공지도 엉뚱하게 했던 것으로 확인됐다.
+
+      31일 과학기술정보통신부(과기정통부) 조사결과에 따르면 KT는 부산 지역 라우팅 사고 발생 시점으로부터 4분 뒤인 25일 오전 11시 20분에 장애를 최초로 인지했다.
+      
+      KT는 사고 초기에 원인을 디도스 공격으로 추정하고 20분 뒤인 11시 40분 과기정통부에 사이버 공격 신고를 했다. 그러나 실제 장애 원인이 네트워크 경로설정(라우팅) 오류임을 파악하고 4분 뒤인 11시 44분 과기정통부에 다시 이를 알렸다. 장애 발생 인지 후 원인 파악에만 24분이 걸린 것이다.
+  
+      KT의 공지도 엉터리였다. 오전 11시 44분 과기정통부에는 라우팅 오류라고 알렸으면서 18분이 지난 낮 12분 2분에 '대규모 디도스 공격'이 있었다고 공지한 것이다.
+  
+      다만 KT는 의도적으로 허위사실을 알리려 한 것이 아니라 내부 소통지연과 실수가 있었던 것으로 전해졌다. 홍진배 과기정통부 정보보호네트워크정책관은 "저희가 라우팅 오류를 보고받은 시각은 11시 44분"이라며 "KT에서 내부적으로 (결정해 공지)한 것이고 KT에 확인이 필요할 것 같다"고 말했다.
+  
+      당초 KT가 디도스 공격을 사고 원인으로 추정했던 이유에도 의문이 간다. 방효창 두원공과대학교 스마트IT학과 교수는 연합뉴스를 통해 "엔지니어는 디도스인지 여부를 충분히 구분하고 판단할 능력이 있다. 어떻게 잘못됐는지 금방 알 수 있다"며 "만약 진짜 몰랐다면 자기들 실수일 리 없다고 자만한 결과였을 수 있다"고 지적했다.
+  
+      실제 정부 조사에서도 디도스 공격이었다면 작동했을 방화벽이 전혀 작동하지 않은 것으로 파악됐다. 과기정통부 홍 정책관은 "조사 과정에서 경찰 및 전문가 등과 함께 KT가 실제로 오인한 상황을 확인했다"며 "KT도 초기 정확한 분석을 하지 않고 트래픽 급증에만 집중하다가 오판을 했다고 인정했다"고 말했다.
+  </div>
+
+  <hr>
+
+  <h2>background-clip</h2>
+  <ul>
+    <li>
+      border-box
+      <div class="div-clip" id="div-clip1">
+        지난 25일 전국적 네트워크 장애 사태를 일으킨 KT가 내부 소통지연과 실수로 제때 원인을 파악하지 못하고 공지도 엉뚱하게 했던 것으로 확인됐다.   
+        31일 과학기술정보통신부(과기정통부) 조사결과에 따르면 KT는 부산 지역 라우팅 사고 발생 시점으로부터 4분 뒤인 25일 오전 11시 20분에 장애를 최초로 인지했다.
+        KT는 사고 초기에 원인을 디도스 공격으로 추정하고 20분 뒤인 11시 40분 과기정통부에 사이버 공격 신고를 했다. 그러나 실제 장애 원인이 네트워크 경로설정(라우팅) 오류임을 파악하고 4분 뒤인 11시 44분 과기정통부에 다시 이를 알렸다. 장애 발생 인지 후 원인 파악에만 24분이 걸린 것이다.
+        KT의 공지도 엉터리였다. 오전 11시 44분 과기정통부에는 라우팅 오류라고 알렸으면서 18분이 지난 낮 12분 2분에 '대규모 디도스 공격'이 있었다고 공지한 것이다.
+      </div>
+    </li>
+
+    <li>
+      padding-box
+      <div class="div-clip" id="div-clip2">
+        지난 25일 전국적 네트워크 장애 사태를 일으킨 KT가 내부 소통지연과 실수로 제때 원인을 파악하지 못하고 공지도 엉뚱하게 했던 것으로 확인됐다.    
+        31일 과학기술정보통신부(과기정통부) 조사결과에 따르면 KT는 부산 지역 라우팅 사고 발생 시점으로부터 4분 뒤인 25일 오전 11시 20분에 장애를 최초로 인지했다.    
+        KT는 사고 초기에 원인을 디도스 공격으로 추정하고 20분 뒤인 11시 40분 과기정통부에 사이버 공격 신고를 했다. 그러나 실제 장애 원인이 네트워크 경로설정(라우팅) 오류임을 파악하고 4분 뒤인 11시 44분 과기정통부에 다시 이를 알렸다. 장애 발생 인지 후 원인 파악에만 24분이 걸린 것이다.
+        KT의 공지도 엉터리였다. 오전 11시 44분 과기정통부에는 라우팅 오류라고 알렸으면서 18분이 지난 낮 12분 2분에 '대규모 디도스 공격'이 있었다고 공지한 것이다.
+      </div> 
+    </li>
+
+    <li>
+      content-box
+      <div class="div-clip" id="div-clip3">
+        지난 25일 전국적 네트워크 장애 사태를 일으킨 KT가 내부 소통지연과 실수로 제때 원인을 파악하지 못하고 공지도 엉뚱하게 했던 것으로 확인됐다.   
+        31일 과학기술정보통신부(과기정통부) 조사결과에 따르면 KT는 부산 지역 라우팅 사고 발생 시점으로부터 4분 뒤인 25일 오전 11시 20분에 장애를 최초로 인지했다.
+        KT는 사고 초기에 원인을 디도스 공격으로 추정하고 20분 뒤인 11시 40분 과기정통부에 사이버 공격 신고를 했다. 그러나 실제 장애 원인이 네트워크 경로설정(라우팅) 오류임을 파악하고 4분 뒤인 11시 44분 과기정통부에 다시 이를 알렸다. 장애 발생 인지 후 원인 파악에만 24분이 걸린 것이다.    
+        KT의 공지도 엉터리였다. 오전 11시 44분 과기정통부에는 라우팅 오류라고 알렸으면서 18분이 지난 낮 12분 2분에 '대규모 디도스 공격'이 있었다고 공지한 것이다.
+      </div>
+    </li>
+  </ul>
+  
+  <hr>
+
+  <h2>
+    backgroung-image,
+    background-repeat,
+    background-size,
+    background-position,
+    background-origin,
+    background-attachiment
+  </h2>
+
+  <div id="div-bg-img">
+
+  </div>
+
+
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+  <br><br><br><br><br>
+
+</body>
+</html>

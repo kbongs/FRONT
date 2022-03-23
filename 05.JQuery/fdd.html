@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <button id="btn">클릭 전</button>
+
+<script>
+
+var button = document.getElementById('btn');
+console.log(button.value);
+button.addEventListener('click', function(){
+
+  console.log(button.value);
+
+  button.innerHTML = '클릭 후';
+// button.value = '클릭 후';
+
+// button.style.backgroundColor = 'red';
+button.style.color = 'red';
+
+});
+
+</script>
+
+
+
+<!-- <h1 id="clickHeadline">Click Me</h1>
+
+<h1 id="onclickHeadline" onclick="clickInline()">Click me for inline onclick event</h1>
+	
+<script>
+//annonymous function
+var headline = document.getElementById("clickHeadline");
+
+headline.onclick = function() {
+	headline.innerHTML = "CLICKED!";
+};
+
+// using onclick event in html h1 to change headline
+var onclickHeadline = document.getElementById("onclickHeadline");
+
+function clickInline() {    
+	onclickHeadline.innerHTML = "CLICKED!";
+}
+</script> -->
+</body>
+</html>
